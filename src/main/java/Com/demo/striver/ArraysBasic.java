@@ -8,7 +8,7 @@ public class ArraysBasic {
     public static void main(String[] args) {
         //largest element in an array
 
-        int [] arr= {1,5,6,7,2};
+        int[] arr = {1, 5, 0, 6, 0, 7, 0, 2};
 
         /*
         //largest element in an array
@@ -132,7 +132,7 @@ public class ArraysBasic {
         }
 
 */
-        //left rotate an array by d places
+        /*//left rotate an array by d places
         //arr={1,5,6,7,2} d=2
         //reverse first d elements in an array----arr={5,1,|6,7,2}
         //then reverse the remaining array-----arr={5,1,|2,7,6}
@@ -152,11 +152,7 @@ public class ArraysBasic {
                 arr) {
             System.out.println(a);
         }
-
-    }
-
-
-    public static int[] reverseArray(int left,int right,int[] arr){
+        public static int[] reverseArray(int left,int right,int[] arr){
         while(left <=right){
             int temp=arr[left];
             arr[left]=arr[right];
@@ -166,5 +162,32 @@ public class ArraysBasic {
         }
     return arr;
     }
+        */
 
+
+        //move all non zero elements to left
+        //optimal O(N)
+        //using two pointers
+        int i = -1;
+        //this iteration is finding the first zeroth element
+        for (int j = 0; j < arr.length - 1; j++) {
+            if (arr[j] == 0) {
+                i = j;
+                break;
+            }
+        }
+        //starting the iteration from first zero to end
+        for (int j = i; j <= arr.length - 1; j++) {
+            if (arr[j] != 0) {
+                int temp = arr[j];
+                arr[i] = temp;
+                arr[j] = 0;
+                i++;
+            }
+        }
+        for (int a :
+                arr) {
+            System.out.println(a);
+        }
+    }
 }
