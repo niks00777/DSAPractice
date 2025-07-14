@@ -8,7 +8,7 @@ public class ArraysBasic {
     public static void main(String[] args) {
         //largest element in an array
 
-        int[] arr = {1, 5, 0, 6, 0, 7, 0, 2};
+        int[] arr = {1,0};
 
         /*
         //largest element in an array
@@ -165,7 +165,7 @@ public class ArraysBasic {
         */
 
 
-        //move all non zero elements to left
+        /*//move all non zero elements to left
         //optimal O(N)
         //using two pointers
         int i = -1;
@@ -183,6 +183,23 @@ public class ArraysBasic {
                 arr[i] = temp;
                 arr[j] = 0;
                 i++;
+            }
+        }
+        for (int a :
+                arr) {
+            System.out.println(a);
+        }*/
+
+        int i=0;
+
+        for (int j = 0; j <= arr.length - 1; j++) {
+            if (arr[j] != 0 && arr[i]==0) {
+                int temp = arr[j];
+                arr[i] = temp;
+                arr[j] = 0;
+                i++;
+            }else{
+                arr[i]=arr[j];
             }
         }
         for (int a :
